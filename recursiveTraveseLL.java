@@ -32,6 +32,37 @@ public class recursiveTraveseLL {
         }
         return false;
     }
+    // search and return position of element
+    public static int search2(Node head, int x){
+        if(head == null){
+            return -1;
+        }
+        int pos = 1;
+        Node curr = head;
+        while(curr != null){
+            if(curr.data == x){
+                return pos;
+
+            }
+
+            curr = curr.next;
+            pos++;
+        }
+        return pos;
+    }
+    // recursive search
+    public static int search3(Node head, int x, int pos){
+        if (head == null) {
+           return -1; 
+        }
+        
+        if(head.data == x){
+            return pos;
+        }
+        pos++;
+        return search3(head.next, x, pos++);
+        
+    }
     public static void main(String[] args) {
         Node head = new Node(10);
         head.next = new Node(20);
@@ -39,6 +70,8 @@ public class recursiveTraveseLL {
         head.next.next.next = new Node(40);
 
        // recursive(head);
-       System.out.println(searchLL(head,20));
+       // System.out.println(searchLL(head,35));
+       // System.out.println(search2(head, 20));
+       System.out.println(search3(head,40, 1));
     }
 }
