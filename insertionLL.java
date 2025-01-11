@@ -52,6 +52,7 @@ public class insertionLL {
         return head;
 
     }
+    // print linked list
     public static void printList(Node head){
         Node curr = head;
         while (curr != null) {
