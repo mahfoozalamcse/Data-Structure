@@ -1,2 +1,2 @@
 # Linked-List
-learn and practice linked-list
+learn and practice linked
