@@ -26,6 +26,28 @@ public class insertAtPos {
      return head;
 
     }
+
+    // sorted inserted in the linked list
+    public static Node sortedInserted(Node head, int x){
+      Node temp = new Node(x);
+      
+      if (head == null) {
+         return temp;
+      }
+      if (x < head.data) {
+        temp.next = head;
+        return temp;
+      }
+      Node curr = head;
+      
+      while(curr.next != null && curr.next.data < x){
+         curr = curr.next;
+      }
+      temp.next = curr.next;
+      curr.next = temp;
+      
+      return head;
+    }
     public static void printList(Node head){
         Node temp = head;
         while (temp != null) {
@@ -37,7 +59,8 @@ public class insertAtPos {
        Node head = new Node(10);
        head.next = new Node(20);
        head.next.next = new Node(30);
-       insertatIdx(head, 2, 2);
-       printList(head);
+    //    insertatIdx(head, 2, 2);
+          sortedInserted(head, 25);
+          printList(head);
     }
 }
