@@ -48,6 +48,35 @@ public class insertAtPos {
       
       return head;
     }
+    // print middle element naive
+    public static void printMiddleNaive(Node head){
+        if (head == null) {
+            return;
+        }
+        int count = 0;
+        Node curr;
+        for (curr = head;  curr !=null; curr = curr.next) {
+            count++;
+        }
+        curr = head;
+        for(int i=0; i<count/2; i++){
+            curr = curr.next;
+        }
+        System.out.println(curr.data);
+    }
+
+    // middle of the linked list
+    public static int printMiddle(Node head){
+      Node slow = head;
+      Node fast = head;
+
+      while (fast != null && fast.next != null) {
+         slow = slow.next;
+         fast = fast.next.next;
+      }
+      return slow.data;
+    }
+
     public static void printList(Node head){
         Node temp = head;
         while (temp != null) {
@@ -62,5 +91,8 @@ public class insertAtPos {
     //    insertatIdx(head, 2, 2);
           sortedInserted(head, 25);
           printList(head);
+          System.out.println();
+          System.out.println(printMiddle(head));
+          printMiddleNaive(head);
     }
 }
