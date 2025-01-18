@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class insertAtPos {
     static class Node{
         int data;
@@ -113,6 +115,32 @@ public class insertAtPos {
         System.out.println(second.data);
     }
 
+    // reverse use auxilary space
+    public static Node reverseLL1(Node head){
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        for(Node curr = head; curr!= null; curr = curr.next){
+            arr.add(curr.data);
+        }
+        for(Node curr = head; curr!= null; curr = curr.next){
+            curr.data = arr.remove(arr.size()-1);
+        }
+        return head;
+    }
+
+    // efficient reverse linked list
+    public static Node reverseLL(Node head){
+       Node curr = head;
+       Node prev = null;
+       while (curr != null) {
+           Node next = curr.next;
+           curr.next = prev;
+           prev = curr;
+           curr = next;
+       }
+       return prev;
+        
+    }
+
     public static void printList(Node head){
         Node temp = head;
         while (temp != null) {
@@ -130,7 +158,14 @@ public class insertAtPos {
         //   System.out.println();
         //   System.out.println(printMiddle(head));
         //   printMiddleNaive(head);
-        nthNode(head, 1);
-        printnth2(head, 2);
+        // nthNode(head, 1);
+        // printnth2(head, 2);
+        // head = reverseLL1(head);
+        // printList(head);
+
+        head = reverseLL(head);
+        printList(head);
+        
+        
     }
 }
