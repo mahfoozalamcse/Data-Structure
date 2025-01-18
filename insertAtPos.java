@@ -77,6 +77,42 @@ public class insertAtPos {
       return slow.data;
     }
 
+    // find nth node from end of the linked list
+    // method 1
+    public static void nthNode(Node head, int x){
+        int len = 0;
+        for(Node curr = head; curr!= null; curr = curr.next){
+            len++;
+        }
+        if (len < x) {
+            return;
+        } 
+        Node curr = head;
+        for(int i=1; i<len-x+1; i++){
+            curr = curr.next;
+        }
+        System.out.println(curr.data);
+        
+    }
+
+    // method 2
+    public static void printnth2(Node head, int x){
+        if (head == null) {
+            return;
+        }
+        Node first = head;
+        for(int i=0; i<x; i++){
+            if(first == null) return;
+            first = first.next;
+        }
+        Node second = head;
+        while(first != null){
+            second = second.next;
+            first = first.next;
+        }
+        System.out.println(second.data);
+    }
+
     public static void printList(Node head){
         Node temp = head;
         while (temp != null) {
@@ -89,10 +125,12 @@ public class insertAtPos {
        head.next = new Node(20);
        head.next.next = new Node(30);
     //    insertatIdx(head, 2, 2);
-          sortedInserted(head, 25);
-          printList(head);
-          System.out.println();
-          System.out.println(printMiddle(head));
-          printMiddleNaive(head);
+        //   sortedInserted(head, 25);
+        //   printList(head);
+        //   System.out.println();
+        //   System.out.println(printMiddle(head));
+        //   printMiddleNaive(head);
+        nthNode(head, 1);
+        printnth2(head, 2);
     }
 }
