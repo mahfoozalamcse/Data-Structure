@@ -140,6 +140,41 @@ public class insertAtPos {
        return prev;
         
     }
+    // recursive reverse method 1
+    public static Node reverseRec(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node res_head = reverseRec(head.next);
+        Node rest_Tail = head.next;
+        rest_Tail.next = head;
+        head.next = null;
+        return res_head;
+    }
+
+    // method 2 rec
+    public static Node reverseRec2(Node curr, Node prev){
+        if (curr == null) {
+            return prev;
+        }
+        Node next = curr.next;
+        curr.next = prev;
+        return reverseRec2(next, curr);
+    }
+
+    // remove duplicate from sorted linked list
+    public static void removeDuplicate(Node head){
+        
+        Node temp = head;
+        
+        while (temp != null && temp.next != null) {
+            if (temp.data == temp.next.data) {
+                temp.next = temp.next.next;
+            }else{
+           temp = temp.next; 
+            }
+        }
+    }
 
     public static void printList(Node head){
         Node temp = head;
@@ -152,6 +187,8 @@ public class insertAtPos {
        Node head = new Node(10);
        head.next = new Node(20);
        head.next.next = new Node(30);
+       head.next.next.next = new Node(30);
+       head.next.next.next.next = new Node(30);
     //    insertatIdx(head, 2, 2);
         //   sortedInserted(head, 25);
         //   printList(head);
@@ -163,7 +200,15 @@ public class insertAtPos {
         // head = reverseLL1(head);
         // printList(head);
 
-        head = reverseLL(head);
+        // head = reverseLL(head);
+        // printList(head);
+        // head = reverseRec(head);
+        // printList(head);
+
+        // head = reverseRec2(head, null);
+        // printList(head);
+       
+        removeDuplicate(head);
         printList(head);
         
         
