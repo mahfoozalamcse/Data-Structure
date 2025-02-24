@@ -57,7 +57,9 @@ public class impLL {
      Node head = new Node(10);
      head = insertEnd(head, 20);
      head = insertEnd(head, 30);
+     
      //printList(head);
+
      head = deleteNode(head, 10);
       printList(head);
 
