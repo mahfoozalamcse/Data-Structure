@@ -1,6 +1,7 @@
 
 public class recursiveTraveseLL {
     static class Node{
+    
         int data;
         Node next;
         Node(int d){
