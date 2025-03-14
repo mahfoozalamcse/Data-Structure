@@ -5,7 +5,7 @@ public class recursiveTraveseLL {
         int data;
         Node next;
         Node(int d){
-            data = d;
+            data = d; 
             next = null;
 
         }
