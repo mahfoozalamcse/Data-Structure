@@ -1,6 +1,6 @@
 public class insertionLL {
     static class Node{
-        int data;
+        int data; 
         Node next; 
         Node(int d){
             data = d;
