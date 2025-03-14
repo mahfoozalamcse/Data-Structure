@@ -1,6 +1,6 @@
 
 
-public class impLL {
+public class impLL { 
        static class Node{
          int data;
          Node next;
