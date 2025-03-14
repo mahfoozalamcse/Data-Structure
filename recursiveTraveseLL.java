@@ -12,7 +12,7 @@ public class recursiveTraveseLL {
     }
     public static void recursive(Node head){
        
-       if (head == null) {
+       if (head == null) { 
            return;
        }
        System.out.print(head.data +" ");
