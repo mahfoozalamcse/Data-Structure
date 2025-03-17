@@ -2,7 +2,7 @@
 
 public class impLL { 
        static class Node{ 
-         int data;
+         int data; 
          Node next;
          Node(int d){
             this.data = d;
