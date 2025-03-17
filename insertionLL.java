@@ -1,4 +1,4 @@
-public class insertionLL {
+public class insertionLL { 
     static class Node{
         int data; 
         Node next; 
