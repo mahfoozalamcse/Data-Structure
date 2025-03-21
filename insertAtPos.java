@@ -13,7 +13,7 @@ public class insertAtPos {
     public static Node insertatIdx(Node head, int pos, int x){
      Node temp = new Node(x); 
      if (pos == 1) {
-        temp.next = head;
+        temp.next = head; 
         return temp;
      }
      Node curr = head;
