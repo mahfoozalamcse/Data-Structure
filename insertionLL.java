@@ -56,7 +56,7 @@ public class insertionLL {
     public static void printList(Node head){
         Node curr = head;
         while (curr != null) {
-            System.out.print(head.data + " ");
+            System.out.print(head.data + " "); 
             curr = curr.next;
         }
     }
