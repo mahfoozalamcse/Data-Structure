@@ -8,7 +8,7 @@ public class linkedlistimp {
         }
     }
    //  traverse linkedlist
-   public static void traverse(Node head){
+   public static void traverse(Node head){ 
      Node temp = head;
      while (temp != null) {
         System.out.print(temp.data+" ");
