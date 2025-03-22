@@ -1,4 +1,4 @@
-public class linkedlistimp {  
+public class linkedlistimp {   
      static class Node{  
         int data;
         Node next;
