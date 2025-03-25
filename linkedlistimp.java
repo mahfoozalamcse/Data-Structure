@@ -7,7 +7,7 @@ public class linkedlistimp {
             next = null; 
         }  
     }
-   //  traverse linkedlist
+   //  traverse linkedlist 
    public static void traverse(Node head){ 
      Node temp = head;
      while (temp != null) {
