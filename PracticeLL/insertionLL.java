@@ -33,7 +33,7 @@ public class insertionLL {
     public static Node insertEnd(Node head, int x){
         if (head == null) {
             return new Node(x);
-        }
+        } 
         //Node tNode = head; 
         Node temNode = head;
         while (temNode.next != null) {
