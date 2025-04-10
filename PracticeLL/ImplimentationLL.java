@@ -20,12 +20,23 @@ public class ImplimentationLL {
         }
         System.out.print("null");
     }
+
+    // recursive traversal in linked list
+    public static void printRecursive(Node head){
+        if (head == null) {
+            return;
+        }
+        System.out.print(head.data+"->");
+        printRecursive(head.next);
+
+    }
     public static void main(String[] args) {
         Node head = new Node(12);
         Node temp = new Node(23);
         Node temp2 = new Node(33);
         head.next = temp;
         temp.next = temp2;
-        printLL(head);
+        //printLL(head);
+        //printRecursive(head);
     }
 }
