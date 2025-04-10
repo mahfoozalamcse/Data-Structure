@@ -43,6 +43,15 @@ public class insertionLL {
        
         return head;
     }
+
+    // delete first element
+    public static Node deleteFirst(Node head){
+        if (head.next == null || head == null) {
+            return head;
+        }
+        head = head.next;
+        return head;
+    }
   public static void main(String[] args) {
     Node head = new Node(12);
     Node temp = new Node(23);
@@ -54,7 +63,10 @@ public class insertionLL {
     // head = insertBegin(head, 11);
     // printLL(head);
 
-    head = insertEnd(head, 11);
+    // head = insertEnd(head, 11);
+    // printLL(head);
+
+    head = deleteFirst(head);
     printLL(head);
   }  
 }
