@@ -30,7 +30,19 @@ public class insertionLL {
         }
     }
     // insert at the end
-    public 
+    public static Node insertEnd(Node head, int x){
+        if (head == null) {
+            return new Node(x);
+        }
+        //Node tNode = head;
+        Node temNode = head;
+        while (temNode.next != null) {
+            temNode = temNode.next;
+        }
+        temNode.next = new Node(x);
+       
+        return head;
+    }
   public static void main(String[] args) {
     Node head = new Node(12);
     Node temp = new Node(23);
@@ -41,5 +53,8 @@ public class insertionLL {
     //printLL(head);
     // head = insertBegin(head, 11);
     // printLL(head);
+
+    head = insertEnd(head, 11);
+    printLL(head);
   }  
 }
