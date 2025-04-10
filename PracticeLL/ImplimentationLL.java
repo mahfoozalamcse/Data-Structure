@@ -52,6 +52,8 @@ public class ImplimentationLL {
         temp.next = temp2;
         //printLL(head);
         //printRecursive(head);
-        search(head, 12);
+
+        System.out.println();
+        System.out.println(search(head, 12));
     }
 }
