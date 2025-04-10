@@ -65,6 +65,18 @@ public class insertionLL {
         temNode.next = null;
         return head;
     }
+
+    // insert at given position
+    public static Node insertPos(Node head, int pos, int x){
+        if (head == null || pos == 1) {
+            return new Node(x);
+        }
+        Node curr = head;
+        while (curr != null) {
+            curr = curr.next;
+        }
+        curr.next = 
+    }
   public static void main(String[] args) {
     Node head = new Node(12);
     Node temp = new Node(23);
