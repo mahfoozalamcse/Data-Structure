@@ -30,6 +30,7 @@ public class insertionLL {
         }
     }
     // insert at the end
+    public 
   public static void main(String[] args) {
     Node head = new Node(12);
     Node temp = new Node(23);
