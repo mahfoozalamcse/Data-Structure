@@ -1,8 +1,8 @@
+     
 
-
-public class impLL {
-       static class Node{
-         int data;
+public class impLL { 
+       static class Node{ 
+         int data; 
          Node next;
          Node(int d){
             this.data = d;

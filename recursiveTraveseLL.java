@@ -1,17 +1,17 @@
-
 public class recursiveTraveseLL {
-    static class Node{
+    static class Node{ 
+    
         int data;
         Node next;
         Node(int d){
-            data = d;
+            data = d; 
             next = null;
 
         }
     }
     public static void recursive(Node head){
        
-       if (head == null) {
+       if (head == null) { 
            return;
        }
        System.out.print(head.data +" ");

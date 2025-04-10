@@ -1,15 +1,15 @@
 public class DLLImp {
-    static class Node {
-        int data;
+    static class Node {       
+        int data; 
         Node prev;
-        Node next;
+        Node next; 
 
         Node(int data) {
-            this.data = data;
+            this.data = data;  
             this.prev = null;
             this.next = null;
         }
-    }
+    } 
 
     Node head;
     Node tail;

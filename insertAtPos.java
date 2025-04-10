@@ -1,19 +1,19 @@
 import java.util.ArrayList;
 
-public class insertAtPos {
-    static class Node{
+public class insertAtPos { 
+    static class Node{    
         int data;
-        Node next;
-        Node(int d){
-            data = d;
+        Node next; 
+        Node(int d){ 
+            data = d; 
             next = null;
         }
     }
     // insert at given position
     public static Node insertatIdx(Node head, int pos, int x){
-     Node temp = new Node(x);
+     Node temp = new Node(x); 
      if (pos == 1) {
-        temp.next = head;
+        temp.next = head; 
         return temp;
      }
      Node curr = head;
@@ -25,7 +25,7 @@ public class insertAtPos {
      }
      temp.next = curr.next;
      curr.next = temp;
-     return head;
+     return head; 
 
     }
 

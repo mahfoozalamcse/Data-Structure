@@ -1,17 +1,17 @@
-public class linkedlistimp {
-     static class Node{
-        int data;
-        Node next;
-        Node(int d){
-            data = d;
+public class linkedlistimp {   
+     static class Node{    
+        int data; 
+        Node next; 
+        Node(int d){  
+            data = d;  
             next = null;
-        }
+        }  
     }
-   //  traverse linkedlist
-   public static void traverse(Node head){
+   //  traverse linkedlist 
+   public static void traverse(Node head){ 
      Node temp = head;
      while (temp != null) {
-        System.out.print(temp.data+" ");
+        System.out.print(temp.data+" ");  
          temp = temp.next;
      }
    }

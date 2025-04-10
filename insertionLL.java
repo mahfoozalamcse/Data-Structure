@@ -1,14 +1,14 @@
-public class insertionLL {
-    static class Node{
-        int data;
-        Node next;
+public class insertionLL {   
+    static class Node{ 
+        int data; 
+        Node next; 
         Node(int d){
             data = d;
             next = null;
         }
     }
     // insert at begin
-    public static Node insert(Node head, int x){
+    public static Node insert(Node head, int x){ 
        Node temp = new Node(x);
        temp.next = head;
        return temp;
@@ -56,7 +56,7 @@ public class insertionLL {
     public static void printList(Node head){
         Node curr = head;
         while (curr != null) {
-            System.out.print(head.data + " ");
+            System.out.print(head.data + " "); 
             curr = curr.next;
         }
     }
