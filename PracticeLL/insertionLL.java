@@ -75,7 +75,8 @@ public class insertionLL {
         while (curr != null) {
             curr = curr.next;
         }
-        curr.next = 
+        // complete code
+        return head;
     }
   public static void main(String[] args) {
     Node head = new Node(12);
