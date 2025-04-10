@@ -30,6 +30,20 @@ public class ImplimentationLL {
         printRecursive(head.next);
 
     }
+    // search in linked list iterative
+    public static boolean search(Node head, int x){
+        if (head == null) {
+            return false;
+        }
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == x) {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
     public static void main(String[] args) {
         Node head = new Node(12);
         Node temp = new Node(23);
@@ -38,5 +52,6 @@ public class ImplimentationLL {
         temp.next = temp2;
         //printLL(head);
         //printRecursive(head);
+        search(head, 12);
     }
 }
