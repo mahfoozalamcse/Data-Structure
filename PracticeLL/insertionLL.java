@@ -104,6 +104,23 @@ public class insertionLL {
         return head;
         
     }
+
+    // sorted list insertion
+    public static Node insertionSorted(Node head, int x){
+        Node temNode = new Node(x);
+        if (head == null || head.data > x) {
+           temNode.next = head;
+           return temNode; 
+        }
+     
+        Node curr = head;
+        while (curr.next.data < x && curr.next != null) {
+             curr = curr.next;
+        }
+        temNode.next = curr.next;
+        curr.next = temNode;
+        return head;
+    }
   public static void main(String[] args) {
     Node head = new Node(12);
     Node temp = new Node(23);
@@ -124,7 +141,10 @@ public class insertionLL {
     // head = deleteLast(head);
     // printLL(head);
 
-    head = insertPos(head, 13, 2);
+    // head = insertPos(head, 13, 2);
+    // printLL(head);
+
+    head = insertionSorted(head, 20);
     printLL(head);
   }  
 }
