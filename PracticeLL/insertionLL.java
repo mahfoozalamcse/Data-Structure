@@ -67,16 +67,42 @@ public class insertionLL {
     }
 
     // insert at given position
-    public static Node insertPos(Node head, int pos, int x){
-        if (head == null || pos == 1) {
-            return new Node(x);
+    public static Node insertPos(Node head, int x, int pos){
+        Node newNode = new Node(x);
+
+        if (head == null) {
+            if (pos == 1) {
+                return newNode;
+            } else {
+                System.out.println("Position out of range (empty list)..");
+                return null; // Or throw an exception
+            }
         }
+
+        if (pos == 1) {
+            newNode.next = head;
+            return newNode;
+        }
+
         Node curr = head;
-        while (curr != null) {
+        for (int i = 1; i < pos - 1; i++) {
+            if (curr == null) {
+                System.out.println("Position out of range..");
+                return head;
+            }
             curr = curr.next;
         }
-        // complete code
+
+        // Now curr is at the node just before the desired insertion point
+        if (curr == null) {
+            System.out.println("Position out of range..");
+            return head;
+        }
+
+        newNode.next = curr.next;
+        curr.next = newNode;
         return head;
+        
     }
   public static void main(String[] args) {
     Node head = new Node(12);
@@ -95,7 +121,10 @@ public class insertionLL {
     // head = deleteFirst(head);
     // printLL(head);
 
-    head = deleteLast(head);
+    // head = deleteLast(head);
+    // printLL(head);
+
+    head = insertPos(head, 13, 2);
     printLL(head);
   }  
 }
