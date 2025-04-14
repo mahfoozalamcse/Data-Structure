@@ -4,7 +4,7 @@ public class linkedlistimp {
         Node next; 
         Node(int d){  
             data = d;  
-            next = null;
+            next = null; 
         }  
     }
    //  traverse linkedlist 
