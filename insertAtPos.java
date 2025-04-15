@@ -30,7 +30,7 @@ public class insertAtPos {
     }
 
     // sorted inserted in the linked list
-    public static Node sortedInserted(Node head, int x){
+    public static Node sortedInserted(Node head, int x){ 
       Node temp = new Node(x);
       
       if (head == null) {
