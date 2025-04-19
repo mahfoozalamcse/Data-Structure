@@ -1,4 +1,4 @@
-public class DLLImp {
+public class DLLImp { 
     static class Node {       
         int data;  
         Node prev;
