@@ -38,7 +38,7 @@ public class recursiveTraveseLL {
             return -1;
         }
         int pos = 1;
-        Node curr = head;
+        Node curr = head; 
         while(curr != null){
             if(curr.data == x){
                 return pos;
