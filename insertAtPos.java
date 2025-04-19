@@ -10,7 +10,7 @@ public class insertAtPos {
         }
     }
     // insert at given position
-    public static Node insertatIdx(Node head, int pos, int x){ 
+    public static Node insertatIdx(Node head, int pos, int x){  
      Node temp = new Node(x); 
      if (pos == 1) {
         temp.next = head; 
