@@ -9,7 +9,7 @@ public class impLL {
             this.next = null;
          }
         } 
-       public static Node insertEnd(Node head, int data){
+       public static Node insertEnd(Node head, int data){ 
         //Node newNode = new Node(data);
          if (head == null) {
             return new Node(data);
