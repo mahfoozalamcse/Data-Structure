@@ -6,7 +6,7 @@ public class linkedlistimp {
             data = d;  
             next = null; 
         }  
-    }
+    } 
    //  traverse linkedlist 
    public static void traverse(Node head){ 
      Node temp = head;
