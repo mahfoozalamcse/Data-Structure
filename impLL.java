@@ -16,7 +16,7 @@ public class impLL {
          }
          Node temp = head;
          while (temp.next != null) {
-            temp = temp.next;
+            temp = temp.next; 
          }
          temp.next = new Node(data);
          return head;
