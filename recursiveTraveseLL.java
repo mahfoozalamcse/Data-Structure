@@ -6,7 +6,7 @@ public class recursiveTraveseLL {
         Node(int d){
             data = d; 
             next = null;
-
+ 
         }
     }
     public static void recursive(Node head){
