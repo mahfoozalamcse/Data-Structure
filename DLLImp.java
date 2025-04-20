@@ -1,7 +1,7 @@
 public class DLLImp { 
     static class Node {       
         int data;   
-        Node prev; 
+        Node prev;  
         Node next; 
  
         Node(int data) {
