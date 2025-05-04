@@ -16,7 +16,7 @@ public class DLLImp {
 
    
     // Insert at the beginning of the list
-    public void insertAtBeginning(int data) {
+    public void insertAtBeginning(int data) { 
         Node newNode = new Node(data);
 
         if (head == null) {
