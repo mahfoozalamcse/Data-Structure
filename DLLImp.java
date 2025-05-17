@@ -6,7 +6,7 @@ public class DLLImp {
  
         Node(int data) { 
             this.data = data;  
-            this.prev = null;   
+            this.prev = null;    
             this.next = null;   
         }
     } 
