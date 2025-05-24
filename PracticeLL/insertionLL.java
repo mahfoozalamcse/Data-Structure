@@ -4,7 +4,7 @@ public class insertionLL {
     public static class Node{
         int data;
         Node next;
-        Node(int x){
+        Node(int x){ 
             data = x;
             next = null;
         }
