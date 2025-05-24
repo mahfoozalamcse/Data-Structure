@@ -1,7 +1,7 @@
 package PracticeLL;
 
 public class insertionLL {
-    public static class Node{
+    public static class Node{ 
         int data;
         Node next;
         Node(int x){ 
