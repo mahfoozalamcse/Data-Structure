@@ -6,7 +6,7 @@ public class impLL {
          Node next; 
          Node(int d){ 
             this.data = d;
-            this.next = null; 
+            this.next = null;  
          }
         } 
        public static Node insertEnd(Node head, int data){ 
