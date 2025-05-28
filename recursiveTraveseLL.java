@@ -9,7 +9,7 @@ public class recursiveTraveseLL {
  
         }
     }
-    public static void recursive(Node head){
+    public static void recursive(Node head){ 
        
        if (head == null) { 
            return;
