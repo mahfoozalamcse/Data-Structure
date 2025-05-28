@@ -6,7 +6,7 @@ public class insertAtPos {
         Node next; 
         Node(int d){  
             data = d; 
-            next = null;
+            next = null; 
         }
     }
     // insert at given position
