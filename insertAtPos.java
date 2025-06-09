@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class insertAtPos {  
-    static class Node{      
+    static class Node{
         int data;
         Node next;  
         Node(int d){  
