@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class insertAtPos {  
+public class insertAtPos { 
     static class Node{
         int data;
         Node next;  
