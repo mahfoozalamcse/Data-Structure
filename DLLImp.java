@@ -1,5 +1,5 @@
 public class DLLImp { 
-    static class Node {   
+    static class Node { 
         
         int data;    
         Node prev;
