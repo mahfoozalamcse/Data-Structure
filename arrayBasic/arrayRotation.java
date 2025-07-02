@@ -62,7 +62,7 @@ public class arrayRotation {
         int arr[] = {1, 2, 3, 4, 5};
         int d = 2;
 
-        // rotate1(arr, d);
+         rotate1(arr, d);
         // printArr(arr);
 
         reverse(arr);
