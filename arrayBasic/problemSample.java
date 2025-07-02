@@ -1,5 +1,7 @@
 package arrayBasic;
 
+import java.util.Arrays;
+
 public class problemSample {
 
     // range query problem
@@ -115,6 +117,25 @@ public class problemSample {
         }
     }
 
+    // largest element
+    public static int  largestElement(int arr[]){
+        int max  = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+
+
+    // O(nlogn) time largest element
+    public static int largestElement2(int arr[]){
+        Arrays.sort(arr);
+        return arr[arr.length-1];
+     }
+
 
     public static void main(String[] args) {
         // int arr[] = {2, 3, 5, 7, 9};
@@ -143,12 +164,22 @@ public class problemSample {
     //    System.out.println(largestSum(arr));
 
 
-    int arr1[] = {1, 5, 7, 9};
-    int arr2[] = {2, 6, 8, 11, 13};
-    int n = arr1.length;
-    int m = arr2.length;
+    // int arr1[] = {1, 5, 7, 9};
+    // int arr2[] = {2, 6, 8, 11, 13};
+    // int n = arr1.length;
+    // int m = arr2.length;
    
-    mergeArray(arr1, arr2, n, m);
+    // mergeArray(arr1, arr2, n, m);
+
+
+    // System.out.println();
+    // int arr[] = {1, 112, -67, 9, 90};
+    // System.out.println(largestElement(arr));
+
+
+    System.out.println();
+    int arr[] = {12, -7, 90, 78, 87, 9};
+    System.out.println(largestElement2(arr));
    
     
        
