@@ -95,6 +95,84 @@ public class arraysSorted {
         }
         return second;
     }
+
+    // remove duplicate 
+    // method 1 using extra space
+
+    public static int removeDuplicate(int arr[]){
+        int n = arr.length;
+        // edge case
+         if (n == 0 || n == 1)
+            return n;
+
+        // create space    
+        int temp[] = new int[arr.length];
+        int j=0;
+        for ( int i = 0; i < arr.length-1; i++) {
+            if (arr[i] != arr[i+1]) {
+                temp[j++] = arr[i];
+            }
+            
+        }
+        temp[j++] = arr[n-1];
+       
+
+        // copy from temp to original arr
+        for (int i = 0; i < j; i++) {
+            arr[i] = temp[i];
+        }
+
+        return j;
+    }
+
+
+    // remove duplicate using constant extra space
+    public static int removeDuplicate2(int arr[]){
+        int n = arr.length;
+        
+        if (n == 0 || n == 1)
+            return n;
+
+        int j=0; // index start from unique element
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[j] != arr[i]) {
+                j++;
+                arr[j] = arr[i];  // insert unique element at unique place
+            }
+        }
+        
+        // print removed duplicate unique j+1 element
+
+        System.out.println(" removed duplicate ");
+        for (int i = 0; i <=j; i++) {
+            System.out.print(arr[i]+ " ");
+        }
+
+        System.out.println();
+        return j+1;
+    }
+
+    // move zero end of array
+
+    public static void removeZero(int arr[]){
+        int n = arr.length;
+        int j = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                arr[j++] = arr[i];
+            }
+        }
+        while (j < n) {
+            arr[j++] = 0;
+        }
+    }
+
+    // print array
+    public static void printArr(int arr[]){
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
     public static void main(String[] args) {
         // int arr[] = {12, 78, 90, 97};
         // System.out.println(sorted(arr));
@@ -103,12 +181,26 @@ public class arraysSorted {
         // int n = arr.length;
         // System.out.println(sorted2(arr, n));
 
-        int arr[] = {12, 7, 90, 90};
+        // int arr[] = {12, 7, 90, 90};
         
        // System.out.println(secondLargest(arr));
 
+       //   System.out.println();
+      //  System.out.println(" " + secondLargest2(arr));
+
     //   System.out.println();
-       System.out.println(" " + secondLargest2(arr));
+    //   int arr[] = {12, 67, 67, 90, 90, 98};
+    //   System.out.println(removeDuplicate(arr));
+    //   // printArr(arr);
+
+    // int arr[] = {12, 67, 67, 90, 90, 98};
+    // System.out.println(removeDuplicate2(arr));
+
+
+
+    int arr[] = {12, 78, 0, 90, 0, 92, 0 ,89};
+    removeZero(arr);
+    printArr(arr);
 
     }
 }
