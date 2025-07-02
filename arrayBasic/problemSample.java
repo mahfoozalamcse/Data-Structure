@@ -1,0 +1,77 @@
+package arrayBasic;
+
+public class problemSample {
+
+    // range query problem
+    public static void rangeSum(int arr[], int n, int queries[][], int q){
+        int prefix[] = new int[n];
+        prefix[0] = arr[0];
+
+        for(int i=1; i<n; i++){
+          prefix[i] = arr[i] + prefix[i-1];
+        }
+
+        for(int i=0; i<q; i++){
+            int l = queries[i][0];
+            int r = queries[i][1];
+
+            int ans = 0;
+            if (l == 0) {
+                ans = prefix[r];
+            }else{
+                ans = prefix[r]- prefix[l-1];
+            }
+
+           System.out.println("sum from index : " + l + " to " + r + " " + ans);        
+        }
+    
+    }
+
+    // euilibrium index find in array
+    public static int equlibrium1(int arr[]){
+        int leftSum = 0;
+        int totalSum = 0;
+        for ( int i = 0; i < arr.length; i++) {
+          totalSum += arr[i];
+        }
+      
+       // Step 2: Traverse and update leftSum and rightSum
+        for (int i = 0; i < arr.length; i++) {
+            // totalSum - leftSum - arr[i] gives rightSum
+            int rightSum = totalSum - leftSum - arr[i];
+
+            if (leftSum == rightSum) {
+                return i;
+            }
+
+            // Add current element to leftSum for next iteration
+            leftSum += arr[i];
+        }
+
+        // If no equilibrium index found
+        return -1;
+    }
+
+
+    public static void main(String[] args) {
+        // int arr[] = {2, 3, 5, 7, 9};
+        // int n = arr.length;
+
+        // int queries[][] = {
+        //   {0, 3},
+        //   {1, 4},
+        //   {0, 2}
+        // };
+
+        // int q  = queries.length;
+
+        // // call range sum fun
+        // rangeSum(arr, n, queries, q);
+
+
+
+
+        int arr[] = {-7, 1, 5, 2, -4, 3, 0};
+        System.out.println(equlibrium1(arr));
+    }
+}
