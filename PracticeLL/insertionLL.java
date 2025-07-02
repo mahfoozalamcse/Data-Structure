@@ -1,4 +1,4 @@
-package PracticeLL;
+
 
 public class insertionLL {
     public static class Node{ 
