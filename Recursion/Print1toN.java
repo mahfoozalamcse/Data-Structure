@@ -59,19 +59,19 @@ public class Print1toN {
 
     // tower of hanoi problem
     public static void towerOfHanoi(int n, char source, char auxiliary, char destination) {
-        // Base case: if only 1 disk move it directly from source to destination
+        // Base case if only 1 disk move it directly from source to destination
         if (n == 1) {
             System.out.println("Move disk 1 from " + source + " to " + destination);
             return;
         }
 
-        // Step 1: Move n-1 disks from source to auxiliary using destination
+        // Step 1 Move n-1 disks from source to auxiliary using destination
         towerOfHanoi(n - 1, source, destination, auxiliary);
 
-        // Step 2: Move nth (largest) disk from source to destination
+        // Step 2 Move nth largest disk from source to destination
         System.out.println("Move disk " + n + " from " + source + " to " + destination);
 
-        // Step 3: Move n-1 disks from auxiliary to destination using source
+        // Step 3 Move n-1 disks from auxiliary to destination using source
         towerOfHanoi(n - 1, auxiliary, source, destination);
     }
     public static void main(String[] args) {
