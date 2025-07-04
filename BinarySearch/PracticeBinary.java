@@ -80,17 +80,63 @@ public class PracticeBinary {
         return j-i+1;
     }
 
+    // find first 1 occure in sorted 0 and 1
+    public static int firstOne(int arr[], int low, int high){
+        while (low <= high) {
+            int mid = low + (high - low)/2;
+            if (arr[mid] == 1 && (mid == 0 || arr[mid-1] == 0)) {
+                return mid;
+            }
+            else if (arr[mid] == 1) {
+                high = mid-1;
+            }else{
+                low = mid+1;
+            }
+        }
+        return -1;
+    }
+
+    // find peak element
+    public static int peek(int arr[], int n){
+        
+		// First or last element is peak element
+		if (n == 1)
+			return 0;
+		if (arr[0] >= arr[1])
+			return 0;
+		if (arr[n - 1] >= arr[n - 2])
+			return n - 1;
+		// Check for every other element
+		for (int i = 1; i < n - 1; i++) {
+			// Check if the neighbors are smaller
+			if (arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1]){
+				return i;
+            }
+		}
+    
+        return 0;
+    
+    }
+
     public static void main(String[] args) {
     //    int arr[] = {1, 4, 3, 5, 1};
     //    missReapeat(arr); 
 
 
-    int arr[] = {1, 2, 2, 2, 3, 4, 5};
-    int n = arr.length;
+    // int arr[] = {1, 2, 2, 2, 3, 4, 5};
+    // int n = arr.length;
     
-    int x = 2;
-    int result = countOccurence(arr, n, x);
-    System.out.println("  " + result);
+    // int x = 2;
+    // int result = countOccurence(arr, n, x);
+    // System.out.println("  " + result);
+
+    // int arr[] = {0, 0, 0, 0, 1, 1, 1, 1, 1};
+    // int n = arr.length;
+    // System.out.println("  "+ firstOne(arr,0, n));
+
+    int arr[] = { 1, 3, 20, 4, 1, 0 };
+	int n = arr.length;
+	System.out.print("Index of a peak point is : " + peek(arr, n));
 
     }
 }
