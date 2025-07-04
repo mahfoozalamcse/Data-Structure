@@ -38,6 +38,7 @@ public class BinarySearch {
         return binarysearchrecursive(arr, x, mid+1, end);
             
     }
+    
     public static void main(String[] args) {
       int arr[] = {23, 78, 89, 90, 98};
       int x = 90;
