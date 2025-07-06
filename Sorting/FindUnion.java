@@ -1,5 +1,8 @@
 package Sorting;
 
+
+import java.util.TreeSet;
+
 public class FindUnion {
     public static void printUnion(int arr1[], int arr2[], int n, int m){
          int i = 0, j = 0;
@@ -40,12 +43,34 @@ public class FindUnion {
         }
     }
 
+    // union using hash set
+    public static int union(int arr1[], int arr2[], int n, int m){
+        TreeSet<Integer> set = new TreeSet<>();
+        // remove duplicate from arr1
+        for (int i = 0; i < n; i++) {
+            set.add(arr1[i]);
+        }
+        // remove duplicate from arr2
+        for (int i = 0; i < m; i++) {
+            set.add(arr2[i]);
+        }
+        // Print the union (optional)
+        System.out.println("Union Elements: " + set);
+
+        // return unique number
+        return set.size();
+    }
+
     public static void main(String[] args) {
         int arr1[] = {1, 2, 6, 7};
         int arr2[] = {3, 6, 8, 9, 13};
         int n = arr1.length;
         int m = arr2.length;
-        System.out.println();
-        printUnion(arr1, arr2, n, m);
+
+        // System.out.println();
+        // printUnion(arr1, arr2, n, m);
+
+        int count = union(arr1, arr2, n, m);
+        System.out.print("  "+count);
     }
 }
