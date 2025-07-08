@@ -176,7 +176,16 @@ public class Imp {
     }
 
     // Find Middle element in linked list
-    
+    public static void middle(Node head){
+        
+        Node slow = head;
+        Node fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        System.out.println(slow.data);
+    }
 
     public static void main(String[] args) {
         // creating list
@@ -208,6 +217,9 @@ public class Imp {
         System.out.println();
         System.out.println(search(llist.head, 15));
         System.out.println(recursiveSearch(llist.head, 25));
+
+        middle(llist.head);
+
     
     }
 }
