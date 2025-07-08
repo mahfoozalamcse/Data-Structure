@@ -187,6 +187,21 @@ public class Imp {
         System.out.println(slow.data);
     }
 
+    // find nth node from end
+    public static void nthNodeEnd(Node head, int k){
+        Node temp = head;
+        int count = 0;
+        while (temp.next !=  null) {
+            count++;
+            temp = temp.next;
+        }
+        Node current = head;
+        for(int i=0; i<count-k+1; i++){
+            current = current.next;
+        }
+        System.out.println(current.data+" ");
+    }
+
     public static void main(String[] args) {
         // creating list
        Imp llist = new Imp();
@@ -219,6 +234,9 @@ public class Imp {
         System.out.println(recursiveSearch(llist.head, 25));
 
         middle(llist.head);
+
+        // findt nth 
+        nthNodeEnd(llist.head, 3);
 
     
     }
