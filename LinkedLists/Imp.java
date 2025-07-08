@@ -221,48 +221,70 @@ public class Imp {
         return head;
     }
 
+    // sample problem
+    // 1. reverse linked list
+    public static Node reverse(Node head){
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node temp = head;
+        Node prev = null;
+        while (temp.next != null) {
+            temp.next = head;
+            head = temp;
+            temp = prev;
+            temp = temp.next;
+        }
+        return temp;
+    }
+
     public static void main(String[] args) {
         // creating list
        Imp llist = new Imp();
 
-       // add value
-       llist.head = new Node(10);
-       Node second = new Node(20);
-       Node third = new Node(30);
+    //    // add value
+    //    llist.head = new Node(10);
+    //    Node second = new Node(20);
+    //    Node third = new Node(30);
 
-       // link value
-       llist.head.next = second;
-       second.next = third;
+    //    // link value
+    //    llist.head.next = second;
+    //    second.next = third;
 
        // insertion operation
-       llist.head = insertNodeBegin(llist.head, 5);
-       llist.head = insertIdx(llist.head, 15, 1);
-       llist.head = insertEnd(llist.head, 35);
+    //    llist.head = insertNodeBegin(llist.head, 5);
+    //    llist.head = insertIdx(llist.head, 15, 1);
+    //    llist.head = insertEnd(llist.head, 35);
 
-        printLL(llist.head);
-        llist.head = deleteFirst(llist.head);
-        traversal(llist.head);
-        System.out.println();
-        llist.head = deleteIdx(llist.head, 2);
-        traversal(llist.head);
-        System.out.println();
-        llist.head = deleteLast(llist.head);
-        traversal(llist.head);
-        System.out.println();
-        System.out.println(search(llist.head, 15));
-        System.out.println(recursiveSearch(llist.head, 25));
+        // printLL(llist.head);
+        // llist.head = deleteFirst(llist.head);
+        // traversal(llist.head);
+        // System.out.println();
+        // llist.head = deleteIdx(llist.head, 2);
+        // traversal(llist.head);
+        // System.out.println();
+        // llist.head = deleteLast(llist.head);
+        // traversal(llist.head);
+        // System.out.println();
+        // System.out.println(search(llist.head, 15));
+        // System.out.println(recursiveSearch(llist.head, 25));
 
-        middle(llist.head);
+        // middle(llist.head);
 
         // findt nth 
-        nthNodeEnd(llist.head, 3);
+        // nthNodeEnd(llist.head, 3);
         llist.head = insertEnd(llist.head, 10);
+        llist.head = insertEnd(llist.head, 10);
+        llist.head = insertEnd(llist.head, 15);
         llist.head = insertEnd(llist.head, 15);
         llist.head = insertEnd(llist.head, 30);
         traversal(llist.head);
         System.out.println();
 
         llist.head = removeDuplicate(llist.head);
+        traversal(llist.head);
+
+        llist.head = reverse(llist.head);
         traversal(llist.head);
     
     }
