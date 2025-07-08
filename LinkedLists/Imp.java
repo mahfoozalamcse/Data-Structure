@@ -202,6 +202,25 @@ public class Imp {
         System.out.println(current.data+" ");
     }
 
+    // remove duplicate in linked list
+    public static Node removeDuplicate(Node head){
+        if (head == null || head.next == null) {
+            return head;
+        }
+        Node temp = head;
+        while (temp != null && temp.next != null) {
+            if (temp.data == temp.next.data) {
+                // duplicate remove
+                temp.next = temp.next.next;
+            }else{
+               // move next node
+               temp = temp.next;
+            }
+        }
+        
+        return head;
+    }
+
     public static void main(String[] args) {
         // creating list
        Imp llist = new Imp();
@@ -237,7 +256,14 @@ public class Imp {
 
         // findt nth 
         nthNodeEnd(llist.head, 3);
+        llist.head = insertEnd(llist.head, 10);
+        llist.head = insertEnd(llist.head, 15);
+        llist.head = insertEnd(llist.head, 30);
+        traversal(llist.head);
+        System.out.println();
 
+        llist.head = removeDuplicate(llist.head);
+        traversal(llist.head);
     
     }
 }
