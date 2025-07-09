@@ -120,6 +120,44 @@ public class Circular {
         return head; // head remain same
     }
 
+    // Delete head of circular linked 
+    public static Node deleteHead(Node head){
+        if (head == null || head.next == null) {
+            return null;
+        }
+        Node curr = head;
+        while (curr.next != head) {
+              curr = curr.next;
+        }
+        curr.next = head.next; // Last node point to second node
+        head = head.next;      //  update head   
+        return head;
+    }
+
+    // delete kth element in circular linked list
+    public static Node deleteKth(Node head, int k){
+        if (head == null) {
+            return null;
+        }
+        int len = lengthCLL(head);
+        if (k < 0 || k >= len) {
+            System.out.println("Invalid index.. ");
+            return head;
+        }
+        if (k == 0) {
+           return deleteHead(head);
+        }
+        // other wise
+        Node curr = head;
+        for(int i=0; i<k-1; i++){
+            curr = curr.next;
+        }
+
+        curr.next = curr.next.next;
+        return head;
+        
+    }
+
     public static void main(String[] args) {
      Circular cll = new Circular();
      // add in head
@@ -145,7 +183,12 @@ public class Circular {
      cll.head = insertEnd(cll.head, 25);
      printCLL(cll.head);
 
-     
+     cll.head = deleteHead(cll.head);
+     printCLL(cll.head);
+
+     // delete kth element
+     cll.head = deleteKth(cll.head, 4);
+     printCLL(cll.head);
 
     }
 }
