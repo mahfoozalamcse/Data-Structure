@@ -50,8 +50,75 @@ public class Circular {
         return temp;
     } 
 
+    // print length
+    public static int lengthCLL(Node head){
+        Node temp = head;
+        int len = 0;
+        do {
+            len++;
+            temp = temp.next;
+        } while (temp != head);
+        return len;
+    }
+
+    // insert at end of the circular linked list
+    public static Node insertEnd(Node head, int k){
+       Node temp = new Node(k);
+       if (head == null) {
+          temp.next = temp;
+          return temp;
+       }
+       Node curr = head;
+       while (curr.next != head) {
+           curr = curr.next;
+       }
+       curr.next = temp;
+       temp.next = head;
+       return head; // return head modified
+    }
+
     // insert given posion
+    public static Node insertPos(Node head, int k, int pos){
+        Node temp = new Node(k);
+        // empty list and posion is 0
+        if(head == null){
+           if (pos == 0) {
+              temp.next = temp;
+              return temp;
+
+           }else{
+             System.out.println("Invalid posion for empty list.. ");
+             return head;
+           }
+        }
     
+        int len = lengthCLL(head);
+        if (pos < 0  || pos > len) {
+            System.out.println("Enter valid number.. ");
+            return head;
+        }
+
+        // insert head at posion 0
+        if (pos == 0) {
+            Node curr = head;
+            while (curr.next != head) {
+                 curr = curr.next;
+            }
+            temp.next = curr.next;
+            curr.next = temp;
+            return temp; // new head
+        }
+
+        // insert at other posion
+        Node curr = head;
+        for(int i=0; i<pos-1; i++){
+            curr = curr.next;
+        }
+        temp.next = curr.next;
+        curr.next = temp;
+
+        return head; // head remain same
+    }
 
     public static void main(String[] args) {
      Circular cll = new Circular();
@@ -67,8 +134,15 @@ public class Circular {
 
      printCLL(cll.head);
      // insert begin
-     cll.head = insertBegin(cll.head, 5);
+     // cll.head = insertBegin(cll.head, 5);
      cll.head = insertBegin(cll.head,10);
+     printCLL(cll.head);
+
+     cll.head = insertPos(cll.head,12 , 2);
+     printCLL(cll.head);
+
+     // insert at the end
+     cll.head = insertEnd(cll.head, 25);
      printCLL(cll.head);
 
      
