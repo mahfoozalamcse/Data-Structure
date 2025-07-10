@@ -158,6 +158,30 @@ public class Circular {
         
     }
 
+    // reverse circular linked list
+    public static Node reverseCLL(Node head){
+        if (head == null || head.next == head) { // check empty
+            return head;
+        }
+        Node prev = null;
+        Node curr = head;
+        Node next = null;
+        
+
+        do {
+            
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        } while (curr != head);
+
+        // fix head make circular
+        head.next = prev; // last become head
+        head = prev; // new head prev
+        return head;
+    }
+
     public static void main(String[] args) {
      Circular cll = new Circular();
      // add in head
@@ -188,6 +212,10 @@ public class Circular {
 
      // delete kth element
      cll.head = deleteKth(cll.head, 4);
+     printCLL(cll.head);
+
+     // reverse cll
+     cll.head = reverseCLL(cll.head);
      printCLL(cll.head);
 
     }
