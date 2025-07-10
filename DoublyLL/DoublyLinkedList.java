@@ -21,9 +21,22 @@ public class DoublyLinkedList {
             temp = temp.next;
         }
     }
+    // insert begin in Doubly linked list
+    public static Node insertBegin(Node head, int k){
+        Node temp = new Node(k);
+        if (head == null) {
+            return temp;
+        }
+        temp.next = head;
+        head.prev = temp;
+        head = temp;
+        return head;
+        
+    }
+
     public static void main(String[] args) {
         DoublyLinkedList dll = new DoublyLinkedList();
-        
+
         dll.head = new Node(10);
         Node second = new Node(20);
         Node third = new Node(30);
@@ -36,6 +49,11 @@ public class DoublyLinkedList {
         fourth.prev = third;
         fourth.next = null;
 
+        dllTraversal(dll.head);
+
+        // insert begin
+        System.out.println();
+        dll.head = insertBegin(dll.head, 5);
         dllTraversal(dll.head);
         
         
