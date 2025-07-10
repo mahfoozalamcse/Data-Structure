@@ -182,6 +182,26 @@ public class Circular {
         return head;
     }
 
+    // Detect loop in any linked list
+    public static boolean loop(Node head){
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;  // move slow by 1 step
+            fast = fast.next.next; // move fast by 2 step
+
+            // check loop 
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // detect intersection in circular linked linked list
+
+
     public static void main(String[] args) {
      Circular cll = new Circular();
      // add in head
