@@ -34,6 +34,22 @@ public class DoublyLinkedList {
         
     }
 
+    // insert at the end of doubly linked list
+    public static Node insertEnd(Node head, int k){
+        Node temp = new Node(k);
+        if (head == null) {
+            return temp;
+        }
+        Node curr = head;
+        while (curr.next != null) {
+            curr = curr.next;
+
+        }
+        curr.next = temp;
+        temp.prev = curr; // set previous
+        return head;
+    }
+
     public static void main(String[] args) {
         DoublyLinkedList dll = new DoublyLinkedList();
 
@@ -52,8 +68,14 @@ public class DoublyLinkedList {
         dllTraversal(dll.head);
 
         // insert begin
+
         System.out.println();
         dll.head = insertBegin(dll.head, 5);
+        dllTraversal(dll.head);
+
+        // insert End
+        System.out.println();
+        dll.head = insertEnd(dll.head, 45);
         dllTraversal(dll.head);
         
         
