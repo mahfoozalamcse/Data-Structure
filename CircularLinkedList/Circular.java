@@ -201,6 +201,55 @@ public class Circular {
 
     // detect intersection in circular linked linked list
 
+    public static Node getLoopStart(Node head){
+       
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                // found loop
+                slow = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+
+                return slow; // start of loop
+            }
+        }
+        return null;
+    }
+
+    // intersection check
+    public static boolean insterSection(Node head1, Node head2){
+        Node loop1 = getLoopStart(head1);
+        Node loop2 = getLoopStart(head2);
+
+        if (loop1 == null || loop2 == null) {
+            return false;
+        }
+        // case1 same loop start definatly intersect
+
+        if (loop1 == loop2) {
+            return true;
+        }
+
+        // case 2 when different start loop, check if they in same loop
+        Node temp = loop1.next;
+        while (temp != loop1) {
+            if (temp == loop2) {  // same loop diffrent , different entry
+                return true;
+            }
+            temp = temp.next;
+        }
+
+        return false; // competetly seprate loop
+
+    }
 
     public static void main(String[] args) {
      Circular cll = new Circular();
@@ -237,6 +286,34 @@ public class Circular {
      // reverse cll
      cll.head = reverseCLL(cll.head);
      printCLL(cll.head);
+
+     // check intersection
+       // List 1
+        Node head1 = new Node(1);
+        Node a = new Node(2);
+        Node b = new Node(3);
+        Node c = new Node(4);
+        Node d = new Node(5);
+
+        head1.next = a;
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = b; // Loop starts at b
+
+        // List 2
+        Node head2 = new Node(10);
+        Node x = new Node(20);
+        Node y = new Node(30);
+
+        head2.next = x;
+        x.next = y;
+        y.next = c; 
+
+        boolean result = insterSection(head1, head2);
+        System.out.println(result);
+
+     
 
     }
 }
