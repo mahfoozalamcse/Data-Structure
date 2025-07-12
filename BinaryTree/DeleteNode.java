@@ -115,6 +115,8 @@ public class DeleteNode {
         }
     }
 
+    
+
     public static void main(String[] args) {
        root = new Node(10);
         root.left = new Node(20);
