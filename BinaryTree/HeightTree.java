@@ -64,6 +64,44 @@ public class HeightTree {
       printkDistance(root.left, k-1);
       printkDistance(root.right, k-1);
     }
+
+    // iterative way print k distance
+    public static void printkDistance2(Node root, int k){
+        if (root == null) {
+            return;
+        }
+        if (k == 0) {
+            System.out.println(root.data);
+            return;
+        
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        
+        int level = 0;
+        while (!queue.isEmpty()) {
+           int size = queue.size();
+           
+           // if current level is k , than print element
+           if (k == level) {
+               for(int i=0; i<size; i++){
+                 System.out.print(queue.poll().data+" ");
+               }
+               return;
+           }
+           // traverse current level and enqueue next level
+           for(int i=0; i<size; i++){
+             Node curr = queue.poll();
+             if (curr.left != null) {
+                queue.offer(curr.left);
+             }
+             if (curr.right != null) {
+                queue.offer(curr.right);
+             }
+           }
+           level++;
+        }
+    }
     public static void main(String[] args) {
         root = new Node(10);
         root.left = new Node(20);
@@ -82,5 +120,8 @@ public class HeightTree {
         printkDistance(root, 2);
 
         System.out.println();
+        int k = 2;
+        System.out.println("Element at : "+ k+ " Level");
+        printkDistance2(root, k);
     }
 }
