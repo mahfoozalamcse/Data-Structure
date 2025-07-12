@@ -1,5 +1,8 @@
 package BinaryTree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class HeightTree {
     public static class Node{
         int data;
@@ -21,7 +24,33 @@ public class HeightTree {
         return Math.max(leftDepth, rightDepth)+1;
     }
 
-    // 
+    // iterative version
+    public static int maxHeight2(Node root){
+        if (root == null) {
+            return 0;
+        }
+
+       Queue<Node> q = new LinkedList<>();
+       q.offer(root);
+       int depth = 0;
+
+       while (!q.isEmpty()) {
+         int size = q.size(); // no. of node in current level
+
+         // process all node at current level
+         for(int i=0; i<size; i++){
+            Node curr = q.poll();
+            if (curr.left != null) {
+                q.offer(curr.left);
+            }
+            if (curr.right != null) {
+                q.offer(curr.right);
+            }
+         }
+         depth++; // increment after finish one level
+       }
+       return depth;
+    }
     public static void main(String[] args) {
         root = new Node(10);
         root.left = new Node(20);
@@ -32,5 +61,8 @@ public class HeightTree {
 
         System.out.println();
         System.out.println(maxHeight(root));
+
+        System.out.println();
+        System.out.println(maxHeight2(root));
     }
 }
