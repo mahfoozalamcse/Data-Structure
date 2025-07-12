@@ -51,6 +51,19 @@ public class HeightTree {
        }
        return depth;
     }
+
+    // print k distance
+    public static void printkDistance(Node root, int k){
+      if (root == null) {
+         return;
+      }
+      if (k == 0) {
+        System.out.println(root.data +" ");
+        return;
+      }
+      printkDistance(root.left, k-1);
+      printkDistance(root.right, k-1);
+    }
     public static void main(String[] args) {
         root = new Node(10);
         root.left = new Node(20);
@@ -64,5 +77,10 @@ public class HeightTree {
 
         System.out.println();
         System.out.println(maxHeight2(root));
+
+        System.out.println();
+        printkDistance(root, 2);
+
+        System.out.println();
     }
 }
