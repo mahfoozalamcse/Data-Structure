@@ -27,6 +27,7 @@ public class BinaryTraversal {
     public static void preOrder(Node node){
         if (node == null) {
             return;
+            
         }
         System.out.print(node.data+" ");
         preOrder(node.left);
