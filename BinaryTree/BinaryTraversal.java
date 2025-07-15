@@ -27,11 +27,12 @@ public class BinaryTraversal {
     public static void preOrder(Node node){
         if (node == null) {
             return;
-            
+
         }
         System.out.print(node.data+" ");
         preOrder(node.left);
         preOrder(node.right);
+        
     }
     // post order (left , right, root)
     public static void postOrder(Node node){
