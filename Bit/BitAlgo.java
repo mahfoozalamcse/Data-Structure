@@ -119,6 +119,7 @@ public class BitAlgo {
         // XOR up to n
         System.out.println(xorUptoN(8));
         
+        
 
 
 
