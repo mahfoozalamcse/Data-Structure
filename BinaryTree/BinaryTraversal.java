@@ -33,6 +33,7 @@ public class BinaryTraversal {
         preOrder(node.left);
         preOrder(node.right);
         
+        
     }
     // post order (left , right, root)
     public static void postOrder(Node node){
