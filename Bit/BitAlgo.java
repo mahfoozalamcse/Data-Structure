@@ -2,6 +2,7 @@ package Bit;
 
 public class BitAlgo {
     // set bit in number
+    
     public static void setBit(int num, int i){
         System.out.println("Original bit : " + num);
         num = num | (1 << i);
