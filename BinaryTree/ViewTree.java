@@ -12,6 +12,7 @@ public class ViewTree {
             left = right = null;
         }
     }
+    
     static Node root;
     public static void leftViewe(Node root){
         if (root == null) {
