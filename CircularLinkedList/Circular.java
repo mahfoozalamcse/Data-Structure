@@ -14,6 +14,7 @@ public class Circular {
 
     // print circular
     public static void printCLL(Node head){
+        
         if (head == null) {
             return;
         }
