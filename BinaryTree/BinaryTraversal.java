@@ -12,6 +12,7 @@ public class BinaryTraversal {
           left = right = null;
         }
     }
+    
     static Node root;
     // inorder (left , root, right)
     public static void inorderTraversal(Node node){
