@@ -3,6 +3,7 @@ package DoublyLL;
 public class DoublyLinkedList {
     Node head;
     static class Node{
+        
        int data;
        Node next;
        Node prev;
