@@ -7,6 +7,7 @@ public class BuildHeap {
       */
       
       // max heap
+    
       private int [] heap;
       private int size;
       private int capcity;
