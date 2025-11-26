@@ -13,6 +13,7 @@ public class InsortionSort {
             arr[j+1] = key;
         }
     }
+    
 
     // print arr
     public static void printArr(int arr[]){
@@ -25,4 +26,5 @@ public class InsortionSort {
        insertionSort(arr); 
        printArr(arr);
     }
+    
 }
