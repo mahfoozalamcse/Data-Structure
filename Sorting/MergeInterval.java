@@ -14,6 +14,7 @@ public class MergeInterval {
 
         // Step 3: Add first interval
         merged.add(intervals[0]);
+       
 
         // Step 4: Traverse and merge
         for (int i = 1; i < intervals.length; i++) {
