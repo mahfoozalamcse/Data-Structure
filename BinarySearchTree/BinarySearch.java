@@ -1,6 +1,7 @@
 package BinarySearchTree;
 
 public class BinarySearch {
+    
     public static class Node{
         int key;
         Node left, right;
@@ -9,6 +10,7 @@ public class BinarySearch {
             left = right = null;
         }
     }
+    
     static Node root;
     // insert in binary search tree
     public static Node insert(Node root, int key){
