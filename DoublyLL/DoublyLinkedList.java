@@ -32,8 +32,8 @@ public class DoublyLinkedList {
         head.prev = temp;
         head = temp;
         return head;
-        
     }
+    
 
     // insert at the end of doubly linked list
     public static Node insertEnd(Node head, int k){
