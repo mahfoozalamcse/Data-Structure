@@ -11,6 +11,7 @@ public class Circular {
            next = null;
         }   
     }
+    
 
     // print circular
     public static void printCLL(Node head){
