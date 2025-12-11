@@ -13,6 +13,7 @@ public class HeightTree {
             left = right = null;
         }
     }
+    
     static Node root;
     public static int maxHeight(Node root){
         if (root == null) {
