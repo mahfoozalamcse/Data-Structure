@@ -46,6 +46,7 @@ public class ArrayDequeue {
         System.out.println("Inserted at front: " + value);
     }
 
+    
     // Insert at rear
     public void insertRear(int value) {
         if (isFull()) {
