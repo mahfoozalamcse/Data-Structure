@@ -121,6 +121,7 @@ public class ArrayDequeue {
         }
         return deque[rear];
     }
+    
 
     // Main function to test
     public static void main(String[] args) {
