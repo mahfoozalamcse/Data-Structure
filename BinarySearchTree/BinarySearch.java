@@ -18,6 +18,7 @@ public class BinarySearch {
             root = new Node(key);
             return root;
         }
+        
         if (key < root.key) {
             root.left = insert(root.left, key);
         }else if(key > root.key){
