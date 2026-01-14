@@ -7,6 +7,7 @@ public class ArrayDequeue {
     private int rear;
     private int size;
     private int capacity;
+    
 
     // Constructor
     public ArrayDequeue(int capacity) {
