@@ -9,7 +9,6 @@ public class Imp {
 
         // constructor
         Node(int d){
-
             data = d;
             next = null;
         }
