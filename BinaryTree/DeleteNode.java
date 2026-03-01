@@ -9,6 +9,7 @@ public class DeleteNode {
              // Find the deepest rightmost node in the tree.
              // Copy the data of the deepest node to the node-to-delete.
              // Delete the deepest node.
+        
     public static class Node{
         int data;
         Node left , right;
