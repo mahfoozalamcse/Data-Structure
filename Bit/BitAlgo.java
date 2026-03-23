@@ -8,6 +8,7 @@ public class BitAlgo {
         num = num | (1 << i);
         System.out.println("Set bit : "+num);
     }
+    
 
     // How clear the nth bit
     public static void clearNth(int num, int n){
