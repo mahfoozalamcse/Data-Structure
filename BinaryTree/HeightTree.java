@@ -6,6 +6,7 @@ import java.util.Queue;
 public class HeightTree {
     
     public static class Node{
+        
         int data;
         Node left, right;
         Node(int value){
