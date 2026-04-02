@@ -10,8 +10,7 @@ public class BinaryTraversal {
         Node left, right;
         Node(int d){
           data = d;
-          left = right = null;
-            
+          left = right = null; 
         }
     }
 
