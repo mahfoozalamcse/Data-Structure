@@ -11,6 +11,7 @@ public class BinaryTraversal {
         Node(int d){
           data = d;
           left = right = null;
+            
         }
     }
 
