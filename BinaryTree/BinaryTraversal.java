@@ -5,7 +5,6 @@ import java.util.Queue;
 
 public class BinaryTraversal {
     public static class Node{
-        
         int data;
         Node left, right;
         Node(int d){
